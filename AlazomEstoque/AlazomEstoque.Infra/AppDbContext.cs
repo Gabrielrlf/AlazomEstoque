@@ -11,13 +11,16 @@ namespace AlazomEstoque.Infra
         public DbSet<EstoqueAbertura> EstoqueAbertura { get; set; }
         public DbSet<EstoqueVagas> EstoqueVaga { get; set; }
         public DbSet<CadastroFornecedor> CadFornecedor { get; set; }
-    
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+         => options.UseSqlite(@"Data Source=C:\dados\Alazomdb.db");
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<EstoqueAbertura>()
+            modelBuilder.Entity<EstoqueVagas>()
                 .HasData(
-                    new EstoqueAbertura() { IdAbertura = 1, QtdDia = 12, HorarioAbertura = DateTime.Now }
-                ); ;
+                    new EstoqueVagas() { Id = 1, QtdAtual = 0, UltimaData = DateTime.Now }
+                ) ;
         }
     }
 }

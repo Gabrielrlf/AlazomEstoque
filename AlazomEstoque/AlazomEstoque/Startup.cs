@@ -28,10 +28,8 @@ namespace AlazomEstoque
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            string sqlConnection = Configuration.GetConnectionString("sqlConnection");
-            services.AddDbContextPool<AppDbContext>(op => op.UseMySql(sqlConnection, ServerVersion.AutoDetect(sqlConnection)));
-
+            
+            services.AddDbContext<AppDbContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
