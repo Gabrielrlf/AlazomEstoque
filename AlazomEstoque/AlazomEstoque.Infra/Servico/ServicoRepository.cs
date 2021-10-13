@@ -16,6 +16,7 @@ namespace AlazomEstoque.Infra.Servico
             dbContext.Set<T>().Add(obj);
 
             dbContext.SaveChanges();
+           
         }
 
         public void Dispose()

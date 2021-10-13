@@ -34,7 +34,8 @@ namespace AlazomEstoque
             //Injecao de depedência
             services.AddDbContext<AppDbContext>();
             services.AddSingleton<IVagaRepository, VagaRepository>();
-
+            services.AddSingleton<ICadFornecedor, CadFornRepository>();
+            services.AddSingleton<IEstoqueAbertura, EstqAberturaRepository>();
 
             //Cors
             services.AddCors(options =>

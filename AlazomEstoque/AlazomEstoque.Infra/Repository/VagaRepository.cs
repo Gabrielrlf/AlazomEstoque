@@ -20,7 +20,6 @@ namespace AlazomEstoque.Infra.Repository
             {
                 using (ServicoRepository<EstoqueVagas> rep = new ServicoRepository<EstoqueVagas>())
                 {
-
                     return rep.List().FirstOrDefault();
                 }
             }
