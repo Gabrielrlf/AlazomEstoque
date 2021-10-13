@@ -46,11 +46,9 @@ export class Home extends Component {
 
         req.alterarMaisVagas(boleano).then(result => {
 
-            console.log(result.data);
             if (result.data.statusCode = 200) {
-                console.log(boleano, "boleano");
-                debugger
                 this.verificarAtivo(ativo, boleano);
+            
                 Swal.fire({
                     icon: 'success',
                     title: 'Ok!',
@@ -70,23 +68,18 @@ export class Home extends Component {
             title: 'Erro de conexão, tente mais tarde!'
         })
     }
+
     verificarAtivo = (ativo, boleano) => {
         const { ativo1, ativo2, ativo3 } = this.state;
 
         switch (ativo) {
             case "ativo1":
-                console.log("caindo aqui no ativo1", ativo1);
                 this.setState({ ativo1: boleano });
-                console.log("ativo1", ativo1);
             case "ativo2":
-                console.log("caindo aqui no ativo2", ativo);
                 this.state({ ativo2: boleano });
-                console.log("ativo2", ativo2);
                 break;
             case "ativo3":
-                console.log("caindo aqui no ativo3", ativo);
                 this.state({ ativo3: boleano });
-                console.log("ativo3", ativo3);
                 break;
         }
     }
