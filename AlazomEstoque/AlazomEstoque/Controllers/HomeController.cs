@@ -4,6 +4,7 @@ using AlazomEstoque.Infra.Repository;
 using AlazomEstoque.SharedKernel;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace AlazomEstoque.Controllers
 {
@@ -24,7 +25,7 @@ namespace AlazomEstoque.Controllers
             try
             {
                 EstoqueVagas est = _vagaRepository.BuscarEstoqueVagas();
-                if (est.QtdAtual >= 3 && est.QtdAtual >= 0  && ativo.Equals(true) || new HorasSK().CalcularHoras(est.UltimaData).TotalMinutes <= 30) { return BadRequest(new JsonResult("Sem vaga restante ou aguarde 30 minutos!")); }
+                if (est.QtdAtual >= 3 && est.QtdAtual >= 0 && ativo.Equals(true) || new HorasSK().CalcularHoras(est.UltimaData).TotalMinutes <= 30) { return BadRequest(new JsonResult("Sem vaga restante ou aguarde 30 minutos!")); }
 
                 est.UltimaData = DateTime.Now;
                 est.QtdAtual = ativo ? est.QtdAtual += 1 : est.QtdAtual -= 1;
@@ -35,6 +36,19 @@ namespace AlazomEstoque.Controllers
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+
+        [HttpPost, Route("EnviarInfoForn")]
+        public async Task<IActionResult> EnviarInfoFornecedor([FromBody] CadastroFornecedor cadForn)
+        {
+            try
+            {
+                return Ok();
+            }
+            catch
+            {
+                throw;
             }
         }
     }

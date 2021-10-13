@@ -39,7 +39,7 @@ namespace AlazomEstoque
             //Cors
             services.AddCors(options =>
                 options.AddPolicy(
-                    "CorsPolicy", p =>
+                    "AllowAll", p =>
                     {
                         p.AllowAnyOrigin();
                         p.AllowAnyMethod();
@@ -65,7 +65,7 @@ namespace AlazomEstoque
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlazomEstoque v1"));
             }
 
-            app.UseCors("CorsPolicy");
+            app.UseCors("AllowAll");
             app.UseHttpsRedirection();
 
             app.UseRouting();
