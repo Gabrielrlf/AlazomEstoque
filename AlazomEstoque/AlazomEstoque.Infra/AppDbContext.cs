@@ -6,7 +6,7 @@ namespace AlazomEstoque.Infra
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    //    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<EstoqueAbertura> EstoqueAbertura { get; set; }
         public DbSet<EstoqueVagas> EstoqueVaga { get; set; }

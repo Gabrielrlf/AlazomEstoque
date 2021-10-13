@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlazomEstoque.Application", "AlazomEstoque\AlazomEstoque.Application.csproj", "{532D65D4-03DD-4C47-993C-9D902CF3236E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlazomEstoque.Application", "AlazomEstoque\AlazomEstoque.Application.csproj", "{532D65D4-03DD-4C47-993C-9D902CF3236E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlazomEstoque.Core", "AlazomEstoque.Core\AlazomEstoque.Core.csproj", "{AEDD4AD1-BFAC-49F4-9653-3FE7A5F38481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlazomEstoque.Core", "AlazomEstoque.Core\AlazomEstoque.Core.csproj", "{AEDD4AD1-BFAC-49F4-9653-3FE7A5F38481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlazomEstoque.Teste", "AlazomEstoque.Teste\AlazomEstoque.Teste.csproj", "{6787B27D-EE2E-407F-98D6-61EF78377459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlazomEstoque.Teste", "AlazomEstoque.Teste\AlazomEstoque.Teste.csproj", "{6787B27D-EE2E-407F-98D6-61EF78377459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlazomEstoque.Infra", "AlazomEstoque.Infra\AlazomEstoque.Infra.csproj", "{E664F326-2739-44CD-95EB-1DBFD3FFA01A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlazomEstoque.Infra", "AlazomEstoque.Infra\AlazomEstoque.Infra.csproj", "{E664F326-2739-44CD-95EB-1DBFD3FFA01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlazomEstoque.SharedKernel", "AlazomEstoque.SharedKernel\AlazomEstoque.SharedKernel.csproj", "{155D5DDF-2A22-4160-869E-AFECBB7F36FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E664F326-2739-44CD-95EB-1DBFD3FFA01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E664F326-2739-44CD-95EB-1DBFD3FFA01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E664F326-2739-44CD-95EB-1DBFD3FFA01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155D5DDF-2A22-4160-869E-AFECBB7F36FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155D5DDF-2A22-4160-869E-AFECBB7F36FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155D5DDF-2A22-4160-869E-AFECBB7F36FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155D5DDF-2A22-4160-869E-AFECBB7F36FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,12 @@
+.linhareta {
+    display: inline-block;
+}
+
+.bloco1 {
+    width: 200px;
+    margin-right: 30px;
+    border: 2px black;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    color: black;
+}

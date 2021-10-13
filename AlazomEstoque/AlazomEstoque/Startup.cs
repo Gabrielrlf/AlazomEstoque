@@ -1,4 +1,6 @@
 using AlazomEstoque.Infra;
+using AlazomEstoque.Infra.Interface;
+using AlazomEstoque.Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,13 +30,29 @@ namespace AlazomEstoque
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
+            //Injecao de depedência
             services.AddDbContext<AppDbContext>();
+            services.AddSingleton<IVagaRepository, VagaRepository>();
+
+
+            //Cors
+            services.AddCors(options =>
+                options.AddPolicy(
+                    "CorsPolicy", p =>
+                    {
+                        p.AllowAnyOrigin();
+                        p.AllowAnyMethod();
+                        p.AllowAnyHeader();
+                    }));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlazomEstoque", Version = "v1" });
             });
+
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +65,7 @@ namespace AlazomEstoque
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AlazomEstoque v1"));
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();

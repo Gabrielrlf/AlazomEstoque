@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AlazomEstoque.Core\AlazomEstoque.Core.csproj" />
     <ProjectReference Include="..\AlazomEstoque.Infra\AlazomEstoque.Infra.csproj" />
+    <ProjectReference Include="..\AlazomEstoque.SharedKernel\AlazomEstoque.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
